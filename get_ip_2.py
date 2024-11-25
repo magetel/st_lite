@@ -3,10 +3,8 @@ from requests import get
 import json
 import datetime
 
-loc = get('https://ipapi.co/json/')
+loc = get('https://ipapi.co/json/?key=1Ns8Sx9LNPSbVY8J5DS5XTA7jSbX3OXKvbj08JpXNS47lqJ35B')
 st.write(loc.json())
-datos = 1
 
-fecha = datetime.datetime.now().strftime('%d/%m/%Y_%H_%M_%S')
-with open('json_data' +fecha+'.json', 'w') as outfile:
+with open('json_data.json', 'w') as outfile:
     json.dump(loc.json(),outfile)
